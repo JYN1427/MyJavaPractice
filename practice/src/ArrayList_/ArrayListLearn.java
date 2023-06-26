@@ -1,7 +1,9 @@
 package ArrayList_;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class ArrayListLearn {
     public static void main(String[] args) {
