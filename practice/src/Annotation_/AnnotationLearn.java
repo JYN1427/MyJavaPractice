@@ -29,7 +29,7 @@ public class AnnotationLearn {
         try{
             Method m = cls.getMethod("setArgs", Integer.class, Integer.class); // throws NoSuchMethodException
             Parameter[] parameters = m.getParameters();
-            Annotation[][] annotations = m.getParameterAnnotations();
+            Annotation[][] annotations = m.getParameterAnnotations(); // 第m个参数的第n个注解
             for(int i=0; i< annotations.length; i++) {
                 for(int j=0; j < annotations[i].length; j++) {
                     if(annotations[i][j] instanceof LengthRange) {
