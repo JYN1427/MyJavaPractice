@@ -1,5 +1,7 @@
 package optional_;
 
+import org.junit.Test;
+
 import java.util.Optional;
 
 public class OptionalLearn {
@@ -7,11 +9,12 @@ public class OptionalLearn {
 //        testCreateOptional();
 //        testJudge();
 //        testOrElse();
-        testFilterAndMap();
+//        testFilterAndMap();
     }
 
     // 1 创建Optional对象
-    public static void testCreateOptional() {
+    @Test
+    public void testCreateOptional() {
         // (1) 创建空Optional
         Optional<String> myEmptyOp = Optional.empty();
 
@@ -25,7 +28,8 @@ public class OptionalLearn {
     }
 
     // 2 判断Optional对象: isEmpty()、isPresent()、和ifPresent()
-    public static void testJudge() {
+    @Test
+    public void testJudge() {
         Optional<String> myEmptyOp = Optional.ofNullable(null);
         Optional<String> notEmptyOp = Optional.ofNullable("123");
         // System.out.println(myEmptyOp.isEmpty());  // isEmpty是Java11才有
@@ -42,12 +46,14 @@ public class OptionalLearn {
     // 3 获取Optional对象的值
     // orElse方法和orElseGet, 在获取值的同时 设置在isEmpty()的时候干什么
     // 要么直接传一个值, 要么传一个函数
-    public static void testOrElse() {
+    @Test
+    public void testOrElse() {
         String name = "123";
 
         System.out.println("orElse");
         // orElse()无论是否为empty都会调用函数内容
         String name2 = Optional.ofNullable(name).orElse(getDefaultValue());
+        String name22 = Optional.ofNullable(name).orElse("");
 
         System.out.println("orElseGet");
         // orElseGt()只有为empty才执行函数内容
@@ -55,13 +61,13 @@ public class OptionalLearn {
     }
 
     // 4 过滤和映射
-    public static void testFilterAndMap() {
+    @Test
+    public void testFilterAndMap() {
         // filter()
         String s = "ABC";
         Optional<String> myOp = Optional.ofNullable(s);
         Optional<String> afterFilter = myOp.filter(str -> str.length() > 10);
         System.out.println(afterFilter.isPresent()); // false
-
 
         // map()
         Optional<String> afterMap = myOp.map(String::toLowerCase);

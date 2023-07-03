@@ -45,5 +45,14 @@ public class ArrayListLearn {
         }
 
 
+
+        // 其它
+        List<Integer> myList3 = new ArrayList<>();
+        for(int i=0; i<10; i++) {
+            myList3.add(i);
+        }
+        myList3.stream().filter(num -> num % 2 == 0).forEach(System.out::println);
+
+
     }
 }

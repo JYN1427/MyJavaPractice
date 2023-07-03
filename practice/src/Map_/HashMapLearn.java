@@ -31,7 +31,10 @@ public class HashMapLearn {
         }
         System.out.println("value sum: " + res2);
 
+
         // 2.3 迭代器遍历
+        // Map不能直接.iterator()的
+
         // 2.3.1 整体遍历Entry
         Iterator<Map.Entry<Integer, String>> it0 = usersMap.entrySet().iterator();
         while(it0.hasNext()) {
@@ -41,7 +44,7 @@ public class HashMapLearn {
             System.out.println(key + ":" + value);
         }
         // 2.3.2 局部便利Key
-        Iterator it = usersMap.keySet().iterator(); // Map不能直接.iterator()的
+        Iterator it = usersMap.keySet().iterator();
         while(it.hasNext()) {
             Object k = it.next();
             Object v = usersMap.get(k);

@@ -11,15 +11,16 @@ public class Changeable {
     }
 
     // 格式是：函数名(类型 ... 名称)
-    public static void printSomething(int ... nums) {
-        for(int num : nums) {
+    public static void printSomething(int... nums) {
+        for (int num : nums) {
             System.out.println(num);
         }
     }
 
-    public static void printSomething(String s, int ... nums) {
-        for(int num : nums) {
+    public static void printSomething(String s, int... nums) {
+        for (int num : nums) {
             System.out.println(num);
         }
     }
+
 }

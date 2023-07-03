@@ -1,15 +1,23 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class tmp_ {
     public static void main(String[] args) {
-        int[] a = new int[0];
-        int[] b = new int[]{};
-        System.out.println(a.length);
-        System.out.println(b.length);
-    }
+        Map<Integer, String> myMap = new HashMap<>();
+        myMap.put(1, "1");
+        myMap.put(2, "2");
+        myMap.put(3, "3");
 
+        for(Map.Entry<Integer, String> entry : myMap.entrySet()) {
+            Integer key = entry.getKey();
+            String val = entry.getValue();
+        }
+
+        for(Integer key : myMap.keySet()) {
+            System.out.println(key);
+        }
+
+    }
 
 
 }
