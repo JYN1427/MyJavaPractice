@@ -1,0 +1,8 @@
+如何启用、并注入特定的配置类?
+
+1. 创建一个被@ConfigurationProperties修饰的配置类, 用于接收指定前缀的配置
+   注意: 配置类必须有set方法
+
+2. 使用@EnableConfigurationProperties注解，开启该配置类的配置
+
+3. 在其他Bean中注入配置类和使用配置属性

@@ -1,0 +1,10 @@
+1.
+目前是只写了一个CompletableFuture的工具类, 抖音上学的:
+
+形如CompletableFuture.supplyAsync, 其实他的入参本质是一个Supplier<R>和一个Executor,
+Supplier只有输出, 那你要在任务里有输入怎么办呢？只需要在外面包一层调用方法, 这个调用方法的输入就可以是Function<T, R>
+同理, future.exceptionally要接收一个Function<Throwable, R>那你如果还要更多入参的话, 可以在外层写一个BiFunction<Throwable, T, R>
+
+
+
+2. 具体的CompletableFuture可以后续慢慢积累

@@ -1,0 +1,13 @@
+所有步骤的执行顺序
+
+
+
+
+
+
+
+BeanDefinitionRegistryPostProcessor：在容器初始化开始时
+
+ApplicationContextAware：在容器初始化结束前
+
+CommandLineRunner：在容器初始化结束后，程序启动后

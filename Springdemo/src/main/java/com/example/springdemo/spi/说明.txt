@@ -1,0 +1,2 @@
+通过引入的jar包里的META-INF/service/spring.factories实现注入
+启动类必须有@SpringBootApplication(scanBasePackages = {"org.example"})

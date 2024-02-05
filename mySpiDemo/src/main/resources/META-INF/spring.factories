@@ -1,0 +1,9 @@
+org.example.spi.service.MyService=\
+  org.example.spi.service.impl.MyServiceFirstImpl
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.example.spi.service.impl.MyServiceSecImpl
+
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+org.example.spi.env.MyEnvironmentPostProcessor

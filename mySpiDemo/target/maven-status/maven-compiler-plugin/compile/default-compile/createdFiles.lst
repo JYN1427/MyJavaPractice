@@ -1,0 +1,9 @@
+org\example\conditional\Service2.class
+org\example\spi\service\impl\MyServiceFirstImpl.class
+org\example\conditional\OnClassConfig.class
+org\example\spi\service\impl\MyServiceSecImpl.class
+org\example\conditional\Service1.class
+org\example\spi\service\impl\SomeBean.class
+org\example\App.class
+org\example\spi\env\MyEnvironmentPostProcessor.class
+org\example\spi\service\MyService.class
