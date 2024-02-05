@@ -42,4 +42,13 @@ public class Person {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId=" + personId +
+                ", name='" + name + '\'' +
+                ", enabled=" + enabled +
+                '}';
+    }
 }

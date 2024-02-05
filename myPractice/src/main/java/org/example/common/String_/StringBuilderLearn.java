@@ -2,6 +2,11 @@ package org.example.common.String_;
 
 public class StringBuilderLearn {
     public static void main(String[] args) {
+        basicUse();
+    }
+
+
+    public static void basicUse() {
         StringBuilder s = new StringBuilder("pp");
 
         // 1 append
@@ -20,4 +25,7 @@ public class StringBuilderLearn {
         s.reverse();
         System.out.println(s);
     }
+
+
+
 }

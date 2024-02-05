@@ -1,4 +1,4 @@
-package org.example.common.exception_;
+package org.example.common.exception_.basic;
 
 public class SimpleTryCatch {
     public static void main(String[] args) {

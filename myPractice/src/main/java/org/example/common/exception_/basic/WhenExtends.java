@@ -1,4 +1,4 @@
-package org.example.common.exception_;
+package org.example.common.exception_.basic;
 
 import java.io.IOException;
 

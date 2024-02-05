@@ -1,15 +1,20 @@
 package org.example.common.lambdaAndStream_;
 
+import javafx.util.Pair;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamLearn {
+
+    public static List dataList = java.util.stream.Stream.iterate(0, n -> n+1).limit(20).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
+
     public static void main(String[] args) {
         /*
             1.stram()方法：将集合装为流
@@ -107,11 +112,12 @@ public class StreamLearn {
      * parallelStream
      */
     @Test
-    public void test() {
-        List dataList = java.util.stream.Stream.iterate(0, n -> n+1).limit(20).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
+    public void testIterateAndParallel() {
         int size = 5;
         int stepSize = 3;
-        Stream.iterate(0, n->n+1).limit(size).parallel() // 一共循环size次 - 对应a
+
+        // 一共循环size次 - 对应a
+        Stream.iterate(0, n->n+1).limit(size).parallel()
                 .map(a -> dataList.parallelStream().skip(a * stepSize).limit(stepSize).collect(Collectors.toList()))// 一次取stepSize个datalist的值
                 .collect(Collectors.toList()) // [ [0, 1, 2],[3, 4, 5],[6, 7, 8],[9, 10, 11],[12, 13, 14] ]
                 .parallelStream() // 返回并行的stream 充分利用多核优势
@@ -130,4 +136,39 @@ public class StreamLearn {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
+
+
+    /**
+     * collect()里面toMap的话要指明如果key冲突了该怎么办, 比如(v1, v2) -> v2)
+     */
+    @Test
+    public void testCollect(){
+        List<Pair<String, Double>> pairArrayList = new ArrayList<>();
+        pairArrayList.add(new Pair<>("version", 6.19));
+        pairArrayList.add(new Pair<>("version", 10.24));
+        pairArrayList.add(new Pair<>("version", 13.14));
+
+        Map<String, Double> map = pairArrayList.stream().collect(
+        // 生成的 map 集合中只有一个键值对：{version=13.14}
+//                Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v1));
+                Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
+
+        System.out.println(map.toString());
+
+
+
+        // 然而需要注意, toMap的时候, key可以为null, value不可以为null, 会抛异常
+        // (正常的HashMap 不论key还是value都是可以存null的)
+        pairArrayList.add(new Pair<>(null, 3.14));
+        Map<String, Double> map2 = pairArrayList.stream().collect(Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
+        System.out.println(map2.toString());
+
+        pairArrayList.add(new Pair<>("test", null));
+        Map<String, Double> map3 = pairArrayList.stream().collect(Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
+        System.out.println(map3.toString());
+    }
+
+
+
+
 }

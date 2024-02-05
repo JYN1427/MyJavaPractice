@@ -13,6 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Profile("prod")
 @Configuration
-@PropertySource(value = "classpath:envConfig/test/prod.properties", encoding = "utf-8")
+@PropertySource(value = {"classpath:envConfig/prod/prod.properties", "classpath:envConfig/prod/http.properties"}, encoding = "utf-8")
 public class ProdEnvConfig {
 }

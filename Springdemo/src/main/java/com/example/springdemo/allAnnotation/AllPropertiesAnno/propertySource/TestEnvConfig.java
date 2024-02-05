@@ -14,6 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Profile("test")
 @Configuration
-@PropertySource(value = "classpath:envConfig/test/test.properties", encoding = "utf-8")
+@PropertySource(value = {"classpath:envConfig/test/test.properties", "classpath:envConfig/test/http.properties"}, encoding = "utf-8")
 public class TestEnvConfig {
 }

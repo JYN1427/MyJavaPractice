@@ -6,6 +6,7 @@ import cn.hutool.core.date.DateUtil;
 import org.apache.commons.compress.utils.Lists;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
@@ -21,11 +22,7 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        String outputFile = DateUtil.format(new Date(), "yyyyMMdd")
-                + "年金工作汇报.xlsx";
-
-        System.out.println(outputFile);
-
-
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(timestamp);
     }
 }

@@ -1,4 +1,4 @@
-package org.example.common.exception_;
+package org.example.common.exception_.basic;
 
 // 自定义异常
 public class SelfDefinedException extends RuntimeException {

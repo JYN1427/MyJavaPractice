@@ -41,4 +41,14 @@ public class CacheableAnnoTest {
 
         System.out.println(stopWatch.prettyPrint());
     }
+
+
+    /**
+     * 用于把执行结果更新缓存数据
+     * 相当于"双写模式", 顺序是先写入数据库,
+     */
+    @Test
+    public void testCachePut() {
+
+    }
 }
