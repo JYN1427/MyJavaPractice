@@ -1,0 +1,13 @@
+<bean id="user" class="com.ydlclass.bena.User" scope="prototype" autowire="byType" init-method="init" depends-on="a,b">
+    <property name="name" value="jerry"/>
+    <property name="age" value="18"/>
+</bean>
+
+<bean id="dog" class="com.ydlclass.bean.Dog">
+    <property name="age" value="10"/>
+    <property name="color" value="yellow"/>
+</bean>
+
+<bean id="teddyDog" class="com.ydlclass.bean.TeddyDog" parent="dog">
+    <property name="name" value="tom"/>
+</bean>

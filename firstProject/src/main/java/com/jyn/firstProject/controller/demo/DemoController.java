@@ -25,4 +25,11 @@ public class DemoController {
     public DemoResponse demo2(@RequestBody DemoRequest demoRequest) {
         return new DemoResponse();
     }
+
+    @RequestMapping(value = "/szy", method = RequestMethod.POST)
+    public DemoResponse talent(@RequestBody DemoRequest demoRequest) {
+        DemoResponse demoResponse = new DemoResponse();
+        demoResponse.setDesc("我是一个小天才美少女爸爸");
+        return demoResponse;
+    }
 }
