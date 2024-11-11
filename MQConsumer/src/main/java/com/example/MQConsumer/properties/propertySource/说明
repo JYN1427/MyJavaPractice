@@ -1,0 +1,6 @@
+
+
+在resource/envConfig目录下建立两个不同环境的.properties文件
+
+代码中的@Configuration配置类中通过@PropertySource导入.properties
+而由@Profile注解控制哪个配置类生效

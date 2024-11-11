@@ -1,0 +1,14 @@
+用法就是
+1. 自定义一个注解, 该注解用@Import({MyImportSelector.class})这种去修饰
+2. 然后自定义注解中会定义一些属性字段, 这些字段有助于在ImportSelector实现中去选择需要注入哪种Bean
+3. 这里MyImportSelector就是自己去实现ImportSelector接口, 在里面可以通过反射拿到比如自定义接口的
+
+
+好处特别明显, 就是你可以直接在配置类上选择实现什么
+而不用去改动具体代码
+不然:
+不同父接口的, 起码要直接把业务类里对Bean注入的声明给改掉, 比如原来是ServiceA改成ServiceB
+同一父接口的Bean也至少要把注解改掉: @Resource(name = "Local")改成@Resource(name = Redis")之类的
+
+
+SpringBoot有两个常用注解 @EnableAsync @EnableCaching 其实就是通过ImportSelector来动态注入Bean

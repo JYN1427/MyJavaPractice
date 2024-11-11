@@ -1,0 +1,5 @@
+(1) @ConditionalOnClass/@ConditionalOnMissingClass
+特定类 存在/不存在 于 Classpath（类路径）上时，才会生效
+
+(2) @ConditionalOnBean/@ConditionalOnMissingBean
+特定Bean 在/不在 容器中注册时，才会生效
