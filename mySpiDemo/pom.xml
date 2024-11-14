@@ -133,7 +133,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>${spring-boot.version}</version>
         <configuration>
-          <mainClass>com.example.springdemo.SpringdemoApplication</mainClass>
+          <mainClass>com.example.SpringDemosProject.SpringDemosProjectApplication</mainClass>
           <skip>true</skip>
         </configuration>
         <executions>

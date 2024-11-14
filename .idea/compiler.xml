@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="firstProject" />
-        <module name="Springdemo" />
         <module name="myPractice" />
+        <module name="SpringDemosProject" />
         <module name="ESProject" />
         <module name="JvmDemoProject" />
         <module name="MQConsumer" />
@@ -17,8 +17,10 @@
         <module name="testModule" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Springdemo (1)" target="1.8" />
+    <bytecodeTargetLevel target="8">
+      <module name="ESProject (1)" target="1.8" />
+      <module name="ESProject (2)" target="1.8" />
+      <module name="Springdemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

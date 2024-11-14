@@ -1,6 +1,5 @@
 package org.example.common.lambdaAndStream_;
 
-import javafx.util.Pair;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -136,39 +135,5 @@ public class StreamLearn {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
-
-
-    /**
-     * collect()里面toMap的话要指明如果key冲突了该怎么办, 比如(v1, v2) -> v2)
-     */
-    @Test
-    public void testCollect(){
-        List<Pair<String, Double>> pairArrayList = new ArrayList<>();
-        pairArrayList.add(new Pair<>("version", 6.19));
-        pairArrayList.add(new Pair<>("version", 10.24));
-        pairArrayList.add(new Pair<>("version", 13.14));
-
-        Map<String, Double> map = pairArrayList.stream().collect(
-        // 生成的 map 集合中只有一个键值对：{version=13.14}
-//                Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v1));
-                Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
-
-        System.out.println(map.toString());
-
-
-
-        // 然而需要注意, toMap的时候, key可以为null, value不可以为null, 会抛异常
-        // (正常的HashMap 不论key还是value都是可以存null的)
-        pairArrayList.add(new Pair<>(null, 3.14));
-        Map<String, Double> map2 = pairArrayList.stream().collect(Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
-        System.out.println(map2.toString());
-
-        pairArrayList.add(new Pair<>("test", null));
-        Map<String, Double> map3 = pairArrayList.stream().collect(Collectors.toMap(Pair::getKey, Pair::getValue, (v1, v2) -> v2));
-        System.out.println(map3.toString());
-    }
-
-
-
 
 }
